@@ -362,6 +362,11 @@ div.content {
     padding: 1em;
 }
 
+tt.literal {
+    padding: .3em;
+    background: rgba(245, 245, 237, 1);
+}
+
 .row hr {
     width: 80%;
     border: 0px;
@@ -394,6 +399,7 @@ h6:hover > a.headerlink {
 
 div.highlight pre {
     overflow-x: scroll;
+    font-size: .9em;
 }
 
 /* Custom blocks */

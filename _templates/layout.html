@@ -33,7 +33,11 @@
     {%- endblock %}
 
     {%- block sidebar1 %}
-      <div class="col col-1 sidebar">
+      {% if pagename in ablog %}
+        <div class="col col-3 sidebar">
+      {% else %}
+        <div class="col col-1 sidebar">
+      {% endif %}
         {%- for sidebartemplate in sidebars %}
           {%- include sidebartemplate %}
         {%- endfor %}

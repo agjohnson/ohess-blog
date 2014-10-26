@@ -313,6 +313,12 @@ div.content {
     color: #332;
 }
 
+.row .col.content-pub p:first-child {
+    font-style: italic;
+    font-size: 1.1em;
+    color: #665;
+}
+
 .row h1 + p, .row p.focus {
     margin: 1.1em .6em;
     letter-spacing: -0.02em;
@@ -427,7 +433,7 @@ div.sidebar.sidebar-about a {
     text-decoration: none;
 }
 
-div.sidebar.sidebar-about li {
+div.sidebar li {
     list-style: none;
 }
 
@@ -436,6 +442,7 @@ div.sidebar.sidebar-about li.info-name {
 }
 
 div.sidebar.sidebar-about li.info-twitter {
+    font-size: .9em;
     font-weight: bold;
 }
 

@@ -52,26 +52,34 @@
         <ul>
           {%- if show_copyright %}
             <li>
-              {%- if hasdoc('copyright') %}
-                {% trans path=pathto('copyright'), copyright=copyright|e %}&copy; <a href="{{ path }}">Copyright</a> {{ copyright }}.{% endtrans %}
-              {%- else %}
-                {% trans copyright=copyright|e %}&copy; Copyright {{ copyright }}.{% endtrans %}
-              {%- endif %}
+              <span>
+                {%- if hasdoc('copyright') %}
+                  {% trans path=pathto('copyright'), copyright=copyright|e %}&copy; <a href="{{ path }}">Copyright</a> {{ copyright }}.{% endtrans %}
+                {%- else %}
+                  {% trans copyright=copyright|e %}&copy; Copyright {{ copyright }}.{% endtrans %}
+                {%- endif %}
+              </span>
             </li>
           {%- endif %}
 
           <li>
-            Powered by <a href="ablog.readthedocs.org">ABlog</a>, and <a href="http://readthedocs.org/">Read the Docs</a>.
+            <span>
+              Powered by <a href="ablog.readthedocs.org">ABlog</a>, and <a href="http://readthedocs.org/">Read the Docs</a>.
+            </span>
           </li>
 
           {%- if last_updated %}
             <li>
-              {% trans last_updated=last_updated|e %}Last updated on {{ last_updated }}.{% endtrans %}
+              <span>
+                {% trans last_updated=last_updated|e %}Last updated on {{ last_updated }}.{% endtrans %}
+              </span>
             </li>
           {%- endif %}
           {%- if show_sphinx %}
             <li>
-              {% trans sphinx_version=sphinx_version|e %}Created using <a href="http://sphinx-doc.org/">Sphinx</a> {{ sphinx_version }}.{% endtrans %}
+              <span>
+                {% trans sphinx_version=sphinx_version|e %}Created using <a href="http://sphinx-doc.org/">Sphinx</a> {{ sphinx_version }}.{% endtrans %}
+              </span>
             </li>
           {%- endif %}
         </ul>

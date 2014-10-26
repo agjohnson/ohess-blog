@@ -3,10 +3,10 @@
 
   {% set fa = ablog.fontawesome %}
 
-  {% for archive in catalog %}
-    {% if archive|length %}
+  <div class="col col-2">
+    {% for archive in catalog|sort %}
+      {% if archive|length %}
 
-      <div class="col col-2">
         <h1 class="title">
           Publications
           {%- if archive.href %}
@@ -27,8 +27,8 @@
           </div>
         {% endfor %}
 
-      </div>
-    {% endif %}
-  {% endfor %}
+      {% endif %}
+    {% endfor %}
+  </div>
 
 {% endblock %}

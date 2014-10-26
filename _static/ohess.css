@@ -7,7 +7,8 @@ designer: Anthony Johnson <aj@ohess.org>
 */
 
 body {
-    font-family: 'Georgia', serif;
+    font-family: 'Merriweather', 'Georgia', serif;
+    font-size: 16px;
     margin: 0px;
 }
 
@@ -170,13 +171,6 @@ url: http://www.google.com/fonts/specimen/Droid+Sans+Mono
   src: local('Droid Sans Mono'), local('DroidSansMono'), url(http://fonts.gstatic.com/s/droidsansmono/v7/ns-m2xQYezAtqh7ai59hJaH0X__W3S3MJL29bc5CWfs.woff) format('woff');
 }
 
-@font-face {
-  font-family: 'Quicksand';
-    font-style: normal;
-  font-weight: 400;
-    src: local('Quicksand Regular'), local('Quicksand-Regular'), url(http://fonts.gstatic.com/s/quicksand/v5/sKd0EMYPAh5PYCRKSryvW7O3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
-}
-
 /* STYLING */
 a:link,
 a:visited {
@@ -191,42 +185,17 @@ a:active {
     color: #255767;
 }
 
-/* Header for title */
-#header {
-    font-family: 'Quicksand', 'FreeSans', sans-serif;
-    font-size: 3em;
-    line-height: 1.2em;
-}
-
-#header .ohess > span.oh {
-    text-transform: uppercase;
-    text-shadow: 1px 1px 5px #f4f4f4;
-    color: #6AC2E4;
-}
-
-#header .ohess > span.ess {
-    text-transform: uppercase;
-    text-shadow: 1px 1px 5px #f4f4f4;
-    color: #221;
-}
-
-#header .ohess {
-    line-height: 3.2em;
-    /*margin: 0px 10px;*/
-}
-
 /* Nav */
 #nav {
     margin: 3em 0em 3em 0em;
-    text-transform: uppercase;
-    line-height: .95em;
+    overflow: auto;
     font-family: 'Droid Sans Mono', monospace;
     font-weight: normal;
+    font-size: 1em;
+    text-transform: uppercase;
+    line-height: 1.5em;
     letter-spacing: -0.02em;
-    font-size: 16px;
-    line-height: 20px;
     color: #87796B;
-    overflow: auto;
 }
 
 #nav a {
@@ -239,8 +208,7 @@ a:active {
 }
 
 #nav span.breadcrumb {
-    font-family: 'Droid Sans Mono', monospace;
-    font-size: 14px;
+    font-size: .9em;
     font-weight: normal;
     text-transform: lowercase;
     letter-spacing: -0.02em;
@@ -249,7 +217,7 @@ a:active {
 
 #nav .row > .nav-links > div,
 #nav .row > .nav-breadcrumb > span {
-    padding: 0px 10px;
+    padding: 0px .6em;
 }
 
 /* Acutal content */
@@ -257,7 +225,6 @@ div.content {
     margin-top: 1em;
     background: #fff;
     color: #201515;
-    font-family: 'Merriweather', 'Georgia', serif;
     text-align: left;
 }
 
@@ -270,7 +237,6 @@ div.content {
 .row div.col-3 h1 {
     margin-top: .5em;
     font-style: normal;
-    font-family: 'Merriweather', sans-serif;
     font-weight: 900;
     font-size: 1.5em;
     line-height: 1.6em;
@@ -294,7 +260,6 @@ div.content {
 
 .row div.col-2 h2,
 .row div.col-3 h2 {
-    font-family: 'Merriweather', serif;
     font-weight: 500;
     font-size: 1.4em;
     font-style: italic;
@@ -344,14 +309,12 @@ div.content {
     margin: 1em .6em;
     font-size: .95em;
     font-weight: normal;
-    font-family: 'Merriweather', 'Georgia', serif;
     color: #332;
 }
 
 .row h1 + p, .row p.focus {
     margin: 1.1em .6em;
-    font-family: 'Merriweather';
-     letter-spacing: -0.02em;
+    letter-spacing: -0.02em;
     font-style: normal;
     font-size: 1.15em;
     line-height: 1.25em;
@@ -363,7 +326,6 @@ div.content {
 .row p.focus > b,
 .row p.focus > i,
 .row p.focus > em {
-    font-family: 'Merriweather';
     font-style: italic;
 }
 
@@ -411,6 +373,19 @@ div.content {
     box-shadow: 0px 0px 4px -1px #bbb;
 }
 
+a.headerlink { display: none; }
+
+h1:hover > a.headerlink,
+h2:hover > a.headerlink,
+h3:hover > a.headerlink,
+h4:hover > a.headerlink,
+h5:hover > a.headerlink,
+h6:hover > a.headerlink {
+    display: inline;
+    padding: 0em .3em;
+}
+
+
 /* Custom blocks */
 
 .row div.article-image {
@@ -440,29 +415,30 @@ div.content {
     font-style: italic;
 }
 
-#about-sidebar {
+/* About */
+div.sidebar.sidebar-about {
     margin: 0em 0em 1em 0em;
     overflow: auto;
     text-align: right;
 }
 
-#about-sidebar a {
+div.sidebar.sidebar-about a {
     text-decoration: none;
 }
 
-#about-sidebar #about-name {
+div.sidebar.sidebar-about li {
+    list-style: none;
+}
+
+div.sidebar.sidebar-about li.info-name {
     font-weight: bold;
 }
 
-#about-sidebar #about-name::after {
-    content: ", ";
-}
-
-#about-sidebar #about-tooter {
+div.sidebar.sidebar-about li.info-twitter {
     font-weight: bold;
 }
 
-#about-sidebar > .avatar {
+div.sidebar.sidebar-about > .avatar {
     width: 120px;
     margin: .2em .2em .2em .5em;
     float: none;
@@ -471,9 +447,9 @@ div.content {
     -webkit-border-radius: 50%;
 }
 
-#about-sidebar > p {
+div.sidebar.sidebar-about > p {
     font-style: italic;
-    font-size: .8em;
+    font-size: .9em;
 }
 
 /* Footer */
@@ -491,6 +467,20 @@ div.content {
     margin: 1em 0em;
 }
 
+#footer ul {
+    list-style: none;
+    text-align: center;
+}
+
+#footer ul li {
+    list-style: none;
+    display: inline;
+}
+
+#footer ul li span {
+    white-space: nowrap;
+}
+
 #footer .row p {
     font-size: .9em;
 }
@@ -500,39 +490,3 @@ div.content {
     text-decoration: none;
     color: #166B87;
 }
-
-
-/* Prettify */
-.str { color: #A89581; } /* string */
-.kwd { color: #64ADC5; } /* keyword */
-.com { color: #BFAE9C; } /* comment */
-.typ { color: #166B87; } /* type */
-.lit { color: #64ADC5; } /* literal */
-.pun { color: #87796B; } /* punctuation */
-.pln { color: #615951; } /* plain */
-.tag { color: #3893B1; } /* tag name */
-.atn { color: #166B87; } /* attr name */
-.atv { color: #A89581; } /* attr value */
-.dec { color: #3893B1; } /* declaration */
-.var { color: #3893B1; } /* variable */
-.fun { color: #3893B1; } /* function */
-
-pre.prettyprint {
-    padding: .5em 1em;
-    font-size: .9em;
-    overflow: auto;
-}
-
-ol.linenums {
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
-li.L0, li.L1, li.L2, li.L3, li.L5, li.L6, li.L7, li.L8 {
-    list-style: none;
-}
-
-li.L1, li.L3, li.L5, li.L7, li.L9 {
-    background: #eee;
-}
-

@@ -1,3 +1,2 @@
 
-.. postlist:: 5
-
+.. postlist:: 30

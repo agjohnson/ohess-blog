@@ -174,15 +174,15 @@ url: http://www.google.com/fonts/specimen/Droid+Sans+Mono
 /* STYLING */
 a:link,
 a:visited {
-    color: #166B87;
+    color: #09B164;
 }
 
 a:hover {
-    color: #3893B1;
+    color: #009144;
 }
 
 a:active {
-    color: #255767;
+    color: #09B164;
 }
 
 /* Nav */
@@ -200,11 +200,6 @@ a:active {
 
 #nav a {
     text-decoration: none;
-    color: #004B67;
-}
-
-#nav a.focus {
-    color: #6AC2E4;
 }
 
 #nav span.breadcrumb {
@@ -488,5 +483,4 @@ div.sidebar.sidebar-about > p {
 #footer .row a {
     font-style: normal;
     text-decoration: none;
-    color: #166B87;
 }

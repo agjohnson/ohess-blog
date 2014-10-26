@@ -1,10 +1,9 @@
 {%- extends "page.html" %}
 {% block body %}
 
-  {% set fa = ablog.fontawesome %}
-
   <div class="col col-2">
-    {% for archive in catalog|sort %}
+    {% for collection in catalog.collections|sort(reverse=True) %}
+      {% set archive = catalog[collection] %}
       {% if archive|length %}
 
         <h1 class="title">

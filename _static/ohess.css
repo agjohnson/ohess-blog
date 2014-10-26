@@ -248,6 +248,12 @@ div.content {
     margin-bottom: 1em;
 }
 
+.row div.col h2.archive-title {
+    margin-bottom: 1em;
+    font-size: 1.1em;
+    color: #87796B;
+}
+
 .row h1 > b, .row h1 > i, .row h1 > em {
     font-weight: bold;
     font-style: normal;

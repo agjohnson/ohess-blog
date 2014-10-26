@@ -2,18 +2,19 @@
 {% block body %}
 
   <div class="col col-2">
+    <h1>Publications</h1>
+
     {% for collection in catalog.collections|sort(reverse=True) %}
       {% set archive = catalog[collection] %}
       {% if archive|length %}
 
-        <h1 class="title">
-          Publications
+        <h2 class="archive-title">
           {%- if archive.href %}
-            -&nbsp;<a href="{{ archive.href }}">{{ archive }}</a>
+            <a href="{{ archive.href }}">{{ archive }}</a>
           {%- else %}
-            -&nbsp;{{ archive }}
+            {{ archive }}
           {%- endif %}
-        </h1>
+        </h2>
 
         {% for post in archive %}
           <div class="post post-excerpt">

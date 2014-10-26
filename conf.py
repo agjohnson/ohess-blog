@@ -272,5 +272,7 @@ blog_author = {
 blog_default_author = 'Anthony'
 html_sidebars = {
     '**': ['about-sidebar.html'],
+    'pub/author': ['about-sidebar.html'],
+    'pub/201*': ['about-sidebar.html'],
     'pub/**': ['postcard.html'],
 }

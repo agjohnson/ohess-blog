@@ -7,14 +7,12 @@
   {% endif %}
 {% endblock %}
 
-{% block document %}
+{% block body %}
   {% if pagename in ablog %}
     <div class="col col-3 content">
-      {{ body }}
-    </div>
   {% else %}
     <div class="col col-2 content">
-      {% block block %}{% endblock %}
-    </div>
   {% endif %}
+    {{ body }}
+  </div>
 {% endblock %}

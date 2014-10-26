@@ -6,29 +6,27 @@
   {% for archive in catalog %}
     {% if archive|length %}
 
-      <div class="row">
-        <div class="col col-3">
-          <h1 class="title">
-            Publications
-            {%- if archive.href %}
-              -&nbsp;<a href="{{ archive.href }}">{{ archive }}</a>
-            {%- else %}
-              -&nbsp;{{ archive }}
-            {%- endif %}
-          </h1>
+      <div class="col col-2">
+        <h1 class="title">
+          Publications
+          {%- if archive.href %}
+            -&nbsp;<a href="{{ archive.href }}">{{ archive }}</a>
+          {%- else %}
+            -&nbsp;{{ archive }}
+          {%- endif %}
+        </h1>
 
-          {% for post in archive %}
-            <div class="post post-excerpt">
-              <h3>
-                <a href="{{ pathto(post.docname) }}{{ anchor(post) }}">{{ post.title }}</a>
-              </h3>
-              <p>
-                {{ post.to_html(archive.docname) }}
-              </p>
-            </div>
-          {% endfor %}
+        {% for post in archive %}
+          <div class="post post-excerpt">
+            <h3>
+              <a href="{{ pathto(post.docname) }}{{ anchor(post) }}">{{ post.title }}</a>
+            </h3>
+            <p>
+              {{ post.to_html(archive.docname) }}
+            </p>
+          </div>
+        {% endfor %}
 
-        </div>
       </div>
     {% endif %}
   {% endfor %}

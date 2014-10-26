@@ -1,0 +1,83 @@
+{%- extends "basic/layout.html" %}
+
+{%- block header %}
+  <!-- BEGIN header -->
+  <div id="nav">
+    <div class="row">
+      <div class="w6 nav-links">
+        <div>
+          <a href="{{ pathto('pub') }}">pub</a>
+          <a href="{{ pathto('projects') }}">projects</a>
+          <a href="http://github.com/agjohnson">code</a>
+          <a href="{{ pathto('about') }}">about</a>
+        </div>
+      </div>
+      <div class="w6 nav-breadcrumb">
+        {% if pagename in ablog %}
+          <span class="breadcrumb">({{ pagename }})</span>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <!-- END header -->
+{% endblock %}
+
+{%- block relbar1 %}{% endblock %}
+{%- block relbar2 %}{% endblock %}
+
+{%- block content %}
+  <div class="row">
+
+    {%- block document %}
+      <div class="col col-2 content">
+        {% block body %} {% endblock %}
+      </div>
+    {%- endblock %}
+
+    {%- block sidebar1 %}
+      <div class="col col-1 sidebar">
+        {%- for sidebartemplate in sidebars %}
+          {%- include sidebartemplate %}
+        {%- endfor %}
+      </div>
+    {% endblock %}
+
+    {%- block sidebar2 %}{% endblock %}
+
+  </div>
+{%- endblock %}
+
+{%- block footer %}
+  <div id="footer">
+    <div class="row">
+      <div class="w12">
+        <ul>
+          {%- if show_copyright %}
+            <li>
+              {%- if hasdoc('copyright') %}
+                {% trans path=pathto('copyright'), copyright=copyright|e %}&copy; <a href="{{ path }}">Copyright</a> {{ copyright }}.{% endtrans %}
+              {%- else %}
+                {% trans copyright=copyright|e %}&copy; Copyright {{ copyright }}.{% endtrans %}
+              {%- endif %}
+            </li>
+          {%- endif %}
+
+          <li>
+            Powered by <a href="ablog.readthedocs.org">ABlog</a>, and <a href="http://readthedocs.org/">Read the Docs</a>.
+          </li>
+
+          {%- if last_updated %}
+            <li>
+              {% trans last_updated=last_updated|e %}Last updated on {{ last_updated }}.{% endtrans %}
+            </li>
+          {%- endif %}
+          {%- if show_sphinx %}
+            <li>
+              {% trans sphinx_version=sphinx_version|e %}Created using <a href="http://sphinx-doc.org/">Sphinx</a> {{ sphinx_version }}.{% endtrans %}
+            </li>
+          {%- endif %}
+        </ul>
+      </div>
+    </div>
+  </div>
+{%- endblock %}

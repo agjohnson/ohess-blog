@@ -1,0 +1,538 @@
+/*
+
+name: ohess
+version: 0.2
+designer: Anthony Johnson <aj@ohess.org>
+
+*/
+
+body {
+    font-family: 'Georgia', serif;
+    margin: 0px;
+}
+
+/* GRID */
+.inner, .row {
+    width: 780px;
+    margin: 0em auto;
+    padding: 0em;
+    overflow: auto;
+}
+
+.row .row {
+    margin: 0px -5px;
+}
+
+.row .col-1,
+.row .col-2,
+.row .col-3,
+.row .w1,
+.row .w2,
+.row .w3,
+.row .w4,
+.row .w5,
+.row .w6,
+.row .w7,
+.row .w8,
+.row .w9,
+.row .w10,
+.row .w11,
+.row .w12 {
+    display: inline;
+    float: left;
+    margin-left: 5px;
+    margin-right: 5px;
+    position: relative;
+}
+
+.row .w1 { width: 55px; }
+.row .w2 { width: 120px; }
+.row .w3 { width: 185px; }
+.row .w4, .row .col-1 { width: 250px; }
+.row .w5 { width: 315px; }
+.row .w6 { width: 380px; }
+.row .w7 { width: 445px; }
+.row .w8, .row .col-2 { width: 510px; }
+.row .w9 { width: 575px; }
+.row .w10 { width: 650px; }
+.row .w11 { width: 705px; }
+.row .w12, .row .col-3 { width: 770px; }
+
+.row .p1 { margin-left: 70px; }
+.row .p2 { margin-left: 135px; }
+.row .p3 { margin-left: 200px; }
+.row .p4 { margin-left: 265px; }
+.row .p5 { margin-left: 330px; }
+.row .p6 { margin-left: 395px; }
+.row .p7 { margin-left: 460px; }
+.row .p8 { margin-left: 525px; }
+.row .p9 { margin-left: 590px; }
+.row .p10 { margin-left: 655px; }
+.row .p11 { margin-left: 720px; }
+
+@media screen and (min-width: 620px) and (max-width: 800px) {
+    .inner, .row {
+        width: 600px;
+    }
+
+    .row .w1 { width: 40px; }
+    .row .w2 { width: 90px; }
+    .row .w3 { width: 140px; }
+    .row .w4, .row .col-1 { width: 190px; }
+    .row .w5 { width: 240px; }
+    .row .w6 { width: 290px; }
+    .row .w7 { width: 340px; }
+    .row .w8, .row .col-2 { width: 390px; }
+    .row .w9 { width: 440px; }
+    .row .w10 { width: 490px; }
+    .row .w11 { width: 540px; }
+    .row .w12, .row .col-3 { width: 590px; }
+
+    #about-sidebar img.avatar {
+        display: block !important;
+        margin: 5px 5px 15px 65px !important;
+    }
+
+    #about-sidebar #about-name::after {
+        content: none !important;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .inner, .row {
+        width: auto;
+        position: relative;
+    }
+
+    .row .col-1,
+    .row .col-2,
+    .row .col-3,
+    .row .w1,
+    .row .w2,
+    .row .w3,
+    .row .w4,
+    .row .w5,
+    .row .w6,
+    .row .w7,
+    .row .w8,
+    .row .w9,
+    .row .w10,
+    .row .w11,
+    .row .w12 {
+        display: block;
+        float: none;
+        width: auto;
+    }
+
+    .row .p1, .row .p2, .row .p3, .row .p4,
+    .row .p5, .row .p6, .row .p7, .row .p8,
+    .row .p9, .row .p10, .row .p11 {
+        margin-left: 5px;
+    }
+}
+
+/* FONTS */
+
+/*
+typeface: Merriweather
+author: Eben Sorkin
+url: http://www.google.com/fonts/specimen/Merriweather
+*/
+
+@font-face {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Merriweather'), url(http://fonts.gstatic.com/s/merriweather/v8/RFda8w1V0eDZheqfcyQ4EKRDOzjiPcYnFooOUGCOsRk.woff) format('woff');
+}
+@font-face {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Merriweather Bold'), local('Merriweather-Bold'), url(http://fonts.gstatic.com/s/merriweather/v8/ZvcMqxEwPfh2qDWBPxn6nhAPw1J91axKNXP_-QX9CC8.woff) format('woff');
+}
+@font-face {
+  font-family: 'Merriweather';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Merriweather Italic'), local('Merriweather-Italic'), url(http://fonts.gstatic.com/s/merriweather/v8/So5lHxHT37p2SS4-t60SlL52ooqJRs02xO3mONBoqeI.woff) format('woff');
+}
+
+/*
+typeface: Droid Sans Mono
+url: http://www.google.com/fonts/specimen/Droid+Sans+Mono
+*/
+
+@font-face {
+  font-family: 'Droid Sans Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Droid Sans Mono'), local('DroidSansMono'), url(http://fonts.gstatic.com/s/droidsansmono/v7/ns-m2xQYezAtqh7ai59hJaH0X__W3S3MJL29bc5CWfs.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Quicksand';
+    font-style: normal;
+  font-weight: 400;
+    src: local('Quicksand Regular'), local('Quicksand-Regular'), url(http://fonts.gstatic.com/s/quicksand/v5/sKd0EMYPAh5PYCRKSryvW7O3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+}
+
+/* STYLING */
+a:link,
+a:visited {
+    color: #166B87;
+}
+
+a:hover {
+    color: #3893B1;
+}
+
+a:active {
+    color: #255767;
+}
+
+/* Header for title */
+#header {
+    font-family: 'Quicksand', 'FreeSans', sans-serif;
+    font-size: 3em;
+    line-height: 1.2em;
+}
+
+#header .ohess > span.oh {
+    text-transform: uppercase;
+    text-shadow: 1px 1px 5px #f4f4f4;
+    color: #6AC2E4;
+}
+
+#header .ohess > span.ess {
+    text-transform: uppercase;
+    text-shadow: 1px 1px 5px #f4f4f4;
+    color: #221;
+}
+
+#header .ohess {
+    line-height: 3.2em;
+    /*margin: 0px 10px;*/
+}
+
+/* Nav */
+#nav {
+    margin: 3em 0em 3em 0em;
+    text-transform: uppercase;
+    line-height: .95em;
+    font-family: 'Droid Sans Mono', monospace;
+    font-weight: normal;
+    letter-spacing: -0.02em;
+    font-size: 16px;
+    line-height: 20px;
+    color: #87796B;
+    overflow: auto;
+}
+
+#nav a {
+    text-decoration: none;
+    color: #004B67;
+}
+
+#nav a.focus {
+    color: #6AC2E4;
+}
+
+#nav span.breadcrumb {
+    font-family: 'Droid Sans Mono', monospace;
+    font-size: 14px;
+    font-weight: normal;
+    text-transform: lowercase;
+    letter-spacing: -0.02em;
+    color: #87796B;
+}
+
+#nav .row > .nav-links > div,
+#nav .row > .nav-breadcrumb > span {
+    padding: 0px 10px;
+}
+
+/* Acutal content */
+div.content {
+    margin-top: 1em;
+    background: #fff;
+    color: #201515;
+    font-family: 'Merriweather', 'Georgia', serif;
+    text-align: left;
+}
+
+.row h1, .row h2, .row h3, .row h4, .row h5 {
+    font-weight: normal;
+    margin: 0px 10px;
+}
+
+.row div.col-2 h1,
+.row div.col-3 h1 {
+    margin-top: .5em;
+    font-style: normal;
+    font-family: 'Merriweather', sans-serif;
+    font-weight: 900;
+    font-size: 1.5em;
+    line-height: 1.6em;
+    color: #332;
+}
+
+.row div.col-1 h1 {
+    font-family: 'Droid Sans Mono', monospace;
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+
+.row h1.title {
+    margin-bottom: 1em;
+}
+
+.row h1 > b, .row h1 > i, .row h1 > em {
+    font-weight: bold;
+    font-style: normal;
+}
+
+.row div.col-2 h2,
+.row div.col-3 h2 {
+    font-family: 'Merriweather', serif;
+    font-weight: 500;
+    font-size: 1.4em;
+    font-style: italic;
+    line-height: 1.55em;
+    color: #332;
+}
+
+.row div.col-3 h3,
+.row div.col-2 h3,
+.row div.col-1 h2 {
+    font-family: 'Droid Sans Mono', monospace;
+    font-weight: normal;
+    font-size: 1em;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+}
+
+.row div.col-2 h3,
+.row div.col-3 h3 {
+    color: #87796B;
+}
+
+.row h1 + h2 {
+    margin-top: -0.2em;
+}
+
+.row h1 + p,
+.row h2 + p,
+.row h3 + p {
+    margin-top: 10px;
+}
+
+.row h2 > b, .row h2 > i, .row h2 > em {
+    font-weight: bold;
+    font-style: normal;
+}
+
+.row h1 a,
+.row h2 a,
+.row h3 a,
+.row h4 a,
+.row h5 a {
+    text-decoration: none;
+}
+
+.row p {
+    margin: 1em .6em;
+    font-size: .95em;
+    font-weight: normal;
+    font-family: 'Merriweather', 'Georgia', serif;
+    color: #332;
+}
+
+.row h1 + p, .row p.focus {
+    margin: 1.1em .6em;
+    font-family: 'Merriweather';
+     letter-spacing: -0.02em;
+    font-style: normal;
+    font-size: 1.15em;
+    line-height: 1.25em;
+}
+
+.row h1 + p > b,
+.row h1 + p > i,
+.row h1 + p > em,
+.row p.focus > b,
+.row p.focus > i,
+.row p.focus > em {
+    font-family: 'Merriweather';
+    font-style: italic;
+}
+
+.row ul {
+    padding: 0em 0em 0em 1em;
+    margin: 1em .6em;
+}
+
+.row ul > li {
+    font-size: .9em;
+    font-weight: normal;
+    margin: .2em .1em;
+    color: #332;
+}
+
+.row p > strong,
+.row ul > li > strong {
+    font-style: normal;
+    text-transform: uppercase;
+    font-size: 88%;
+    font-weight: normal;
+}
+
+.row pre {
+    margin: 1em 1em;
+    background: #f0f0f0;
+    padding: 1em;
+}
+
+.row hr {
+    width: 80%;
+    border: 0px;
+    border-top: 1px solid #eee;
+}
+
+.row p + hr {
+    width: 40px;
+    height: 20px;
+    margin-top: 15px;
+    border: 0px;
+}
+
+.row > div img {
+    width: 100%;
+    box-shadow: 0px 0px 4px -1px #bbb;
+}
+
+/* Custom blocks */
+
+.row div.article-image {
+    background-color: #221;
+    background-size: 100% auto !important;
+    background-repeat: no-repeat !important;
+}
+
+.row div.article-image > div {
+    margin: .2em 0em 1em 0em;
+    padding: 1em .3em .5em .3em;
+    background: rgba(0,0,0,0.3);
+}
+
+.row div.article-image p,
+.row div.article-image h1,
+.row div.article-image h2,
+.row div.article-image h3 {
+    color: #ffe;
+    text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.row div.article-image a {
+    text-decoration: none;
+    color: #998;
+    font-size: .9em;
+    font-style: italic;
+}
+
+#about-sidebar {
+    margin: 0em 0em 1em 0em;
+    overflow: auto;
+    text-align: right;
+}
+
+#about-sidebar a {
+    text-decoration: none;
+}
+
+#about-sidebar #about-name {
+    font-weight: bold;
+}
+
+#about-sidebar #about-name::after {
+    content: ", ";
+}
+
+#about-sidebar #about-tooter {
+    font-weight: bold;
+}
+
+#about-sidebar > .avatar {
+    width: 120px;
+    margin: .2em .2em .2em .5em;
+    float: none;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+}
+
+#about-sidebar > p {
+    font-style: italic;
+    font-size: .8em;
+}
+
+/* Footer */
+#footer {
+    margin: 1em 0em;
+    line-height: 1.5em;
+    margin-top: 1em;
+    color: #87796B;
+    font-family: 'Merriweather', monospace;
+}
+
+#footer > div {
+    display: block !important;
+    padding: 0px 10px
+    margin: 1em 0em;
+}
+
+#footer .row p {
+    font-size: .9em;
+}
+
+#footer .row a {
+    font-style: normal;
+    text-decoration: none;
+    color: #166B87;
+}
+
+
+/* Prettify */
+.str { color: #A89581; } /* string */
+.kwd { color: #64ADC5; } /* keyword */
+.com { color: #BFAE9C; } /* comment */
+.typ { color: #166B87; } /* type */
+.lit { color: #64ADC5; } /* literal */
+.pun { color: #87796B; } /* punctuation */
+.pln { color: #615951; } /* plain */
+.tag { color: #3893B1; } /* tag name */
+.atn { color: #166B87; } /* attr name */
+.atv { color: #A89581; } /* attr value */
+.dec { color: #3893B1; } /* declaration */
+.var { color: #3893B1; } /* variable */
+.fun { color: #3893B1; } /* function */
+
+pre.prettyprint {
+    padding: .5em 1em;
+    font-size: .9em;
+    overflow: auto;
+}
+
+ol.linenums {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+li.L0, li.L1, li.L2, li.L3, li.L5, li.L6, li.L7, li.L8 {
+    list-style: none;
+}
+
+li.L1, li.L3, li.L5, li.L7, li.L9 {
+    background: #eee;
+}
+

@@ -1,0 +1,33 @@
+{%- extends "page.html" %}
+{% block body %}
+  <div class="col col-3">
+    <h1 class="title">Publications</h1>
+  </div>
+
+  <div class="section">
+
+    <h1>
+      {% if archive_feed and fa %}
+      <a href="{{ pathto(collection.path, 1) }}/atom.xml"></a>{% endif %}
+      {{ header }}
+      {% if collection.href %}
+        <a href="{{ collection.href }}">{{ collection }}</a>
+      {% else %}
+        {{ collection }}
+      {% endif %}
+    </h1>
+
+    {% for post in collection %}
+
+      <div>
+        <h3>
+          <a href="{{ pathto(post.docname) }}{{ anchor(post) }}">{{ post.title }}</a>
+        </h3>
+        <p>
+          {{ post.to_html(collection.docname) }}
+        </p>
+      </div>
+
+    {% endfor %}
+  </div>
+{% endblock %}

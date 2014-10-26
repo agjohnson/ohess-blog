@@ -1,0 +1,20 @@
+{%- extends "layout.html" %}
+
+{%- block extrahead %}
+  {{ super() }}
+  {% if atom_feed %}
+  <link rel="alternate" type="application/atom+xml"  href="{{ pathto(feed_path, 1) }}/atom.xml" title="{{ ablog.blog_title }}">
+  {% endif %}
+{% endblock %}
+
+{% block document %}
+  {% if pagename in ablog %}
+    <div class="col col-3 content">
+      {{ body }}
+    </div>
+  {% else %}
+    <div class="col col-2 content">
+      {% block block %}{% endblock %}
+    </div>
+  {% endif %}
+{% endblock %}

@@ -392,6 +392,9 @@ h6:hover > a.headerlink {
     padding: 0em .3em;
 }
 
+div.highlight pre {
+    overflow-x: scroll;
+}
 
 /* Custom blocks */
 

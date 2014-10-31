@@ -265,7 +265,8 @@ texinfo_documents = [
 #texinfo_no_detailmenu = False
 
 # ABlog
-blog_title = "Ohess"
+blog_title = 'Ohess'
+blog_baseurl = 'http://blog.ohess.org'
 blog_path = 'pub'
 blog_author = {
     'Anthony': {'Anthony Johnson', 'http://ohess.org'},

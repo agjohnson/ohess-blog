@@ -16,5 +16,12 @@
     <p>
       <a href="{{ pathto('about') }}">More</a>
     </p>
+
+    <p>
+      {% if atom_feed %}
+      <a  href="{{ pathto(feed_path, 1) }}/atom.xml" title="{{ ablog.blog_title }}">RSS</a>
+      {% endif %}
+    </p>
+
   {% endif %}
 </div>
